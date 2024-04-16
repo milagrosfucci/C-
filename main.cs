@@ -9,28 +9,40 @@ class Program
         Console.WriteLine("Ingrese la frase a cifrar:");
         string msj = Console.ReadLine();
 
+
         while (string.IsNullOrEmpty(msj))
         {
             Console.WriteLine("Ingrese un mensaje no vacío:");
             msj = Console.ReadLine();
         }
 
-        string msjCifrado = Cifrar(msj);
+        Console.WriteLine("Ingrese la cantidad de movimientos:");
+        string indice = Console.ReadLine();
+
+        while (string.IsNullOrEmpty(indice))
+        {
+            Console.WriteLine("Ingrese un a distancia no vacía:");
+            indice = Console.ReadLine();
+        }
+
+      int indicenum = Convert.ToInt32 (indice);
+
+        string msjCifrado = Cifrar(msj,indicenum);
         Console.WriteLine("Mensaje cifrado: " + msjCifrado);
 
-        string mensajeDescifrado = Descifrar(msjCifrado);
-        Console.WriteLine("Mensaje descifrado: " + mensajeDescifrado);
+        string msjDescifrado = Descifrar(msjCifrado,indicenum);
+        Console.WriteLine("Mensaje descifrado: " + msjDescifrado);
 
     }
 
-    private static string Cifrar(string msj)
+    private static string Cifrar(string msj, int distancia)
     {
-        return Cesar(msj, 7);
+        return Cesar(msj, distancia);
     }
 
-    private static string Descifrar(string msjCifrado)
+    private static string Descifrar(string msjCifrado, int distancia)
     {
-        return Cesar(msjCifrado, -7); // Usar una distancia de -7 para descifrar
+        return Cesar(msjCifrado, -distancia); 
     }
 
 
