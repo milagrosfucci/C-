@@ -49,13 +49,13 @@ class Program
             else
             {
                 // Aplicar cifrado o descifrado de Cesar segun la distancia especificada
-              int nuevoIndice = (indice + distancia) % alfabeto.Length;
-              if (nuevoIndice < 0)
-              {
-                  // Manejar indices negativos sumando la longitud del alfabeto
-                  nuevoIndice += alfabeto.Length;
-              }
-              mensajeTransformado += alfabeto[nuevoIndice];
+                int nuevoIndice = (indice + distancia) % alfabeto.Length;
+                if (nuevoIndice < 0)
+                {
+                    // Manejar indices negativos sumando la longitud del alfabeto
+                    nuevoIndice += alfabeto.Length;
+                }
+                mensajeTransformado += alfabeto[nuevoIndice];
             }
         }
 
